@@ -1,0 +1,16 @@
+manifest:
+  version: 1.2
+
+  self:
+    path: ezs
+
+  projects:
+    - name: zephyr
+      revision: v4.4.0
+      url: https://github.com/zephyrproject-rtos/zephyr
+      west-commands: scripts/west-commands.yml
+      import:
+        path-prefix: deps
+        file: west.yml
+        name-allowlist:
+          - hal_espressif
