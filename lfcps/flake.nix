@@ -3,14 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    dagger = {
-      url = "github:dagger/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
-    { nixpkgs, dagger, ... }:
+    { nixpkgs, ... }:
     let
       systems = [
         "x86_64-linux"
