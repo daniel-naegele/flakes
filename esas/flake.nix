@@ -101,7 +101,11 @@
           default = pkgs.mkShell {
             # Jupyter and the notebook kernel run from the same Python
             # environment, so `pysas` is importable in managed_systems.ipynb.
-            packages = [ (mkPython pkgs) ];
+            packages = [
+              (mkPython pkgs)
+              # git filter that strips notebook outputs on commit (see .gitattributes)
+              pkgs.nbstripout
+            ];
           };
         }
       );
